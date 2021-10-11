@@ -70,6 +70,9 @@ class ViewController: UIViewController {
         
      
     }
+    @IBAction func closedButtonUnWind(sender:UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
 
@@ -103,7 +106,7 @@ extension ViewController:UITableViewDelegate , UITableViewDataSource {
     }
     
      func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 95
+        return 90
     }
     
     

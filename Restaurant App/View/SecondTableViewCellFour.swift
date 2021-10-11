@@ -7,9 +7,11 @@
 //
 
 import UIKit
-
+import MapKit
 class SecondTableViewCellFour: UITableViewCell {
 
+    @IBOutlet weak var restaurantMapView: MKMapView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +23,35 @@ class SecondTableViewCellFour: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func confifure(location:String) {
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(location) { (placemarks, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                let placeMark = placemarks[0]
+                
+                
+                let annotation = MKPointAnnotation()
+                         
+                if let location = placeMark.location {
+                    annotation.coordinate = location.coordinate
+                    
+                    self.restaurantMapView.addAnnotation(annotation)
+                    
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 250, longitudinalMeters: 250)
+                    self.restaurantMapView.setRegion(region, animated: false)
+                }
+                
+            }
+         
+        }
+        
+        
+    }
+    
 }

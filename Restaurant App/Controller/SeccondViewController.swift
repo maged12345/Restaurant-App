@@ -10,7 +10,7 @@ import UIKit
 
 class SeccondViewController: UIViewController {
     var single:Restaurant?
-  
+    var myData = ""
 
     @IBOutlet weak var headerView: DetailUiView!
     @IBOutlet weak var tableView: UITableView!
@@ -33,9 +33,44 @@ class SeccondViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .white
         tableView.contentInsetAdjustmentBehavior = .never
         
+      
+        
+       print("Hi from Second  ViewDidload method ..............????")
+        
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let transform = CGAffineTransform(translationX: 600  , y: 600)
+                                             self.headerView.rateImageView.transform = transform
+                                             self.headerView.rateImageView.alpha = 0
+        
+        
+
+                   UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.7, options: [], animations: {
+                                         self.headerView.rateImageView.transform = .identity
+                                                   self.headerView.rateImageView.alpha = 1
+                                     }, completion: nil)
+        
         
     }
     
+
+    @IBAction func unwindToDetailView (sender:UIStoryboardSegue) {
+      
+        
+       
+        
+        dismiss(animated: true) {
+              if let rate = sender.identifier {
+                self.single?.rating = rate
+                self.headerView.rateImageView.image = UIImage(named: rate)
+                  }
+            
+       
+        
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -84,5 +119,19 @@ extension SeccondViewController:UITableViewDataSource, UITableViewDelegate {
       
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            if let des = segue.destination as? MapViewControllerThree {
+                des.restaurant = single
+                
+            }
+        }else if segue.identifier == "showAnnimation" {
+            if let des = segue.destination as? AnnimationViewController {
+                           des.restaurant = single
+                           
+        }
+    }
     
+    
+}
 }

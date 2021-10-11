@@ -9,6 +9,9 @@
 import UIKit
 
 class SecondTableViewCellOne: UITableViewCell {
+    @IBOutlet weak var phoneNumber: UILabel!
+         
+         @IBOutlet weak var phoneImage: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -10,6 +10,8 @@ import UIKit
 
 class SeccondTableViewCellThree: UITableViewCell {
 
+    @IBOutlet weak var sebaratorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

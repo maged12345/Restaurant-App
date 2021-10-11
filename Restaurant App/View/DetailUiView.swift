@@ -10,12 +10,20 @@ import UIKit
 
 class DetailUiView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var rateImageView:UIImageView!
+  
+    @IBOutlet weak var detailLocation: UILabel! {
+        didSet {
+            detailLocation.layer.cornerRadius = 4
+            detailLocation.clipsToBounds = true
+        }
     }
-    */
+      
+      @IBOutlet weak var detailName: UILabel!
+      
+      @IBOutlet weak var detailImage: UIImageView!
+    
+    
+    
 
 }
