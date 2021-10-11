@@ -16,14 +16,19 @@ class RestaurantTableViewCell: UITableViewCell {
     
     @IBOutlet weak var restaurantLabel: UILabel!
     
-    @IBOutlet weak var restaurantImage: UIImageView! {
+    @IBOutlet weak var restaurantImage: UIImageView!
+       
+        {
         
         didSet{
-            restaurantImage.layer.cornerRadius = restaurantImage.bounds.height / 2
-            restaurantImage.clipsToBounds = true
+            restaurantImage.layer.cornerRadius =  (restaurantImage.bounds.height) / 2
+         
+            
+            
         }
         
     }
+
     
     
     

@@ -132,4 +132,31 @@ class NewRestaurantTableViewController: UITableViewController ,UITextFieldDelega
                
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    @IBAction func SaveButton(_ sender: UIBarButtonItem) {
+        
+        if newRestaurantName.text == "" || newRestaurantType.text == "" || newRestaurantPhone.text == "" || newRestaurantAdress.text == "" || newRestaurantDescription.text == "" {
+            
+            let alert = UIAlertController(title: "Oops", message: "We Can't proceed this operation because You should fill all of the fields", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true, completion: nil)
+            
+            
+            
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
