@@ -69,16 +69,16 @@ class ViewController: UIViewController {
         }
     }
     
-    func loadData()  {
-        let request:NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+    func loadData(with request:NSFetchRequest<Restaurant> = Restaurant.fetchRequest())  {
+        
         do {
             restaurantArray =  try context.fetch(request)
-            tableView.reloadData()
+       
             
         }catch {
             print("Error when Load Data from CoreData. \(error)")
         }
-      
+           tableView.reloadData()
     }
 }
 
@@ -236,21 +236,26 @@ extension ViewController:UITableViewDelegate , UITableViewDataSource {
         
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
 
+//MARK: - Search Bar Method
+extension ViewController:UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request:NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+         request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!)
+   
+         request.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true) ]
+       
+         loadData(with: request)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            DispatchQueue.main.async {
+                self.loadData()
+                searchBar.resignFirstResponder()
+            }
+          
+        }
+    }
+}

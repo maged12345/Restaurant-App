@@ -21,8 +21,6 @@ class SeccondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-      
         headerView.detailImage.image = UIImage(data: single!.image!)
         headerView.detailName.text = single?.name
         headerView.detailLocation.text = single?.type
@@ -37,19 +35,18 @@ class SeccondViewController: UIViewController {
          title = ""
        
         tableView.contentInsetAdjustmentBehavior = .never
-       
-        
-      
-        
        print("Hi from Second  ViewDidload method ..............????")
-        if let image =  single?.rating{
-            headerView.rateImageView.image = UIImage(named:image)
-        }
-          
+        
+   
+         if let image =  single?.rating{
+             headerView.rateImageView.image = UIImage(named:image)
+         }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         let transform = CGAffineTransform(translationX: 600  , y: 600)
                                              self.headerView.rateImageView.transform = transform
                                              self.headerView.rateImageView.alpha = 0
@@ -60,9 +57,10 @@ class SeccondViewController: UIViewController {
                                          self.headerView.rateImageView.transform = .identity
                                                    self.headerView.rateImageView.alpha = 1
                                      }, completion: nil)
-        
+          
       
     }
+  
     
 //@IBAction unWindsegue from annimation ViewController
     @IBAction func unwindToDetailView (sender:UIStoryboardSegue) {
@@ -71,9 +69,12 @@ class SeccondViewController: UIViewController {
               if let rate = sender.identifier {
                 self.single?.rating = rate
                 self.save()
-                self.headerView.rateImageView.image = UIImage(named: self.single!.rating!)
+                
+                
+              self.headerView.rateImageView.image = UIImage(named: self.single!.rating!)
+               
                   }
-            
+           
        
         
         }
