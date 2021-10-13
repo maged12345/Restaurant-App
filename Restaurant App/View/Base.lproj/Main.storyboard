@@ -95,13 +95,34 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emptyRestaurant" destination="pTl-1B-Hyo" id="tZK-ak-sc9"/>
                         <outlet property="tableView" destination="AuQ-7I-6HB" id="7Es-hL-LMs"/>
                         <segue destination="Geu-OH-VX1" kind="show" identifier="toSecondVC" id="u82-94-b12"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="pTl-1B-Hyo">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="48C-2O-MY2">
+                            <rect key="frame" x="30" y="105" width="354" height="350"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="48C-2O-MY2" secondAttribute="height" multiplier="177:175" id="deT-wp-Cyg"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="VyR-o9-1Ax" firstAttribute="bottom" secondItem="48C-2O-MY2" secondAttribute="bottom" constant="45" id="EFv-kf-BED"/>
+                        <constraint firstItem="48C-2O-MY2" firstAttribute="top" secondItem="VyR-o9-1Ax" secondAttribute="top" constant="61" id="VgD-Ij-48y"/>
+                        <constraint firstItem="48C-2O-MY2" firstAttribute="leading" secondItem="VyR-o9-1Ax" secondAttribute="leading" constant="30" id="Xif-0T-TQY"/>
+                        <constraint firstItem="VyR-o9-1Ax" firstAttribute="trailing" secondItem="48C-2O-MY2" secondAttribute="trailing" constant="30" id="XmE-mG-Xf6"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="VyR-o9-1Ax"/>
+                </view>
             </objects>
-            <point key="canvasLocation" x="304" y="-546"/>
+            <point key="canvasLocation" x="372" y="-516"/>
         </scene>
         <!--Seccond View Controller-->
         <scene sceneID="WYm-1n-Qac">
@@ -182,7 +203,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REW-rj-4fW">
                                             <rect key="frame" x="14" y="27" width="386" height="48"/>
-                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="gvE-9c-RFg"/>
                                             </constraints>
@@ -346,7 +367,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MPh-nb-VaC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rq9-kw-0EQ"/>
+                    <navigationItem key="navigationItem" id="rq9-kw-0EQ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pwJ-QQ-c4g"/>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="headerView" destination="SLR-qI-yxU" id="Com-Tu-7W7"/>
@@ -378,7 +401,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hM5-w8-H4N"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b3r-Gf-ICl"/>
+                    <navigationItem key="navigationItem" id="b3r-Gf-ICl">
+                        <barButtonItem key="backBarButtonItem" title=" " id="5R6-DK-5kM"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="I8U-4i-0wZ" id="T22-F3-16w"/>
                     </connections>
@@ -723,7 +748,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -759,6 +784,7 @@
         <image name="close" width="16" height="16"/>
         <image name="cool" width="78" height="83"/>
         <image name="cross" width="33" height="32"/>
+        <image name="empty" width="310" height="372"/>
         <image name="happy" width="78" height="86"/>
         <image name="love" width="78" height="82"/>
         <image name="photo" width="24" height="18"/>

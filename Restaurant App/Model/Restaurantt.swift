@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Restaurant {
+struct Restaurantt {
     //  name type location  phone  description image isVisited
     var name:String?
     var type:String?

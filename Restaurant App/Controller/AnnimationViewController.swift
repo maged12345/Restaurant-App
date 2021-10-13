@@ -13,13 +13,14 @@ class AnnimationViewController: UIViewController {
     @IBOutlet  var rateButtons:[UIButton]!
     
     var restaurant:Restaurant?
+    
     @IBOutlet weak var imageView: UIImageView!
     
     //MARK: - ViewDidLoad Method
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        imageView.image = UIImage(named: restaurant!.image!)
+        imageView.image = UIImage(data: (restaurant?.image!)!)
         
        
         let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))

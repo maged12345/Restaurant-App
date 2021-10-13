@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class NewRestaurantTableViewController: UITableViewController ,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
     
     @IBOutlet weak var newRestaurantImage: UIImageView!
     
@@ -145,11 +151,21 @@ class NewRestaurantTableViewController: UITableViewController ,UITextFieldDelega
             alert.addAction(action)
             
             present(alert, animated: true, completion: nil)
-            
-            
-            
-            
+         }
+        let newRestaurant = Restaurant(context: context)
+        
+        newRestaurant.name = newRestaurantName.text
+        newRestaurant.type = newRestaurantType.text
+        newRestaurant.phone = newRestaurantPhone.text
+        newRestaurant.location = newRestaurantAdress.text
+        newRestaurant.isVisited = false
+        newRestaurant.summary = newRestaurantDescription.text
+        if let restaurantImage = newRestaurantImage.image {
+            newRestaurant.image = restaurantImage.pngData()
         }
+        save()
+    
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -157,6 +173,14 @@ class NewRestaurantTableViewController: UITableViewController ,UITextFieldDelega
     
     
     
-    
+    func save()  {
+        do {
+              try context.save()
+            print("Save Data from Core Data ........")
+        }catch {
+            print("Error When Save Data \(error)")
+        }
+      
+    }
     
 }

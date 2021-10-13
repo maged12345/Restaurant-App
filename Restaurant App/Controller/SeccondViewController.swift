@@ -7,8 +7,11 @@
 //
 
 import UIKit
-
+import CoreData
 class SeccondViewController: UIViewController {
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     var single:Restaurant?
     var myData = ""
 
@@ -20,7 +23,7 @@ class SeccondViewController: UIViewController {
         super.viewDidLoad()
        
       
-        headerView.detailImage.image = UIImage(named: single!.image!)
+        headerView.detailImage.image = UIImage(data: single!.image!)
         headerView.detailName.text = single?.name
         headerView.detailLocation.text = single?.type
         tableView.delegate = self
@@ -31,14 +34,20 @@ class SeccondViewController: UIViewController {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
+         title = ""
+       
         tableView.contentInsetAdjustmentBehavior = .never
+       
         
       
         
        print("Hi from Second  ViewDidload method ..............????")
-        
-        
+        if let image =  single?.rating{
+            headerView.rateImageView.image = UIImage(named:image)
+        }
+          
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let transform = CGAffineTransform(translationX: 600  , y: 600)
@@ -52,19 +61,17 @@ class SeccondViewController: UIViewController {
                                                    self.headerView.rateImageView.alpha = 1
                                      }, completion: nil)
         
-        
+      
     }
     
-
+//@IBAction unWindsegue from annimation ViewController
     @IBAction func unwindToDetailView (sender:UIStoryboardSegue) {
-      
-        
-       
-        
+
         dismiss(animated: true) {
               if let rate = sender.identifier {
                 self.single?.rating = rate
-                self.headerView.rateImageView.image = UIImage(named: rate)
+                self.save()
+                self.headerView.rateImageView.image = UIImage(named: self.single!.rating!)
                   }
             
        
@@ -72,16 +79,25 @@ class SeccondViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func save()  {
+        do{
+            try context.save()
+        }catch{
+            print("Error Saving data from CoreData \(error)")
+        }
     }
-    */
-
+    /*
+    func loadData()  {
+        let request:NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+     
+        
+        do{
+             single = try context.fetch(request)
+        }catch{
+            print("Error Loading Data From Core Data.\(error)")
+        }
+    }
+*/
 }
 extension SeccondViewController:UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,7 +118,7 @@ extension SeccondViewController:UITableViewDataSource, UITableViewDelegate {
                   return cell
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTwo", for: indexPath) as! SecondTableViewCellTwo
-            cell.descriptionLabel.text = single?.description
+            cell.descriptionLabel.text = single?.summary
                   return cell
             case 3:
                      let cell = tableView.dequeueReusableCell(withIdentifier: "cellThree", for: indexPath) as! SeccondTableViewCellThree
