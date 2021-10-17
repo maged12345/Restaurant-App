@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1C4B94582713017B0089FA54 /* NewRestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4B94572713017B0089FA54 /* NewRestaurantTableViewController.swift */; };
+		1C7FB403271A495100E11F1C /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FB402271A495100E11F1C /* Onboarding.storyboard */; };
+		1C7FB405271A692500E11F1C /* WalkThroughContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FB404271A692500E11F1C /* WalkThroughContentViewController.swift */; };
+		1C7FB407271AA4C000E11F1C /* WalkThroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FB406271AA4C000E11F1C /* WalkThroughPageViewController.swift */; };
+		1C7FB409271AB08600E11F1C /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7FB408271AB08600E11F1C /* WalkThroughViewController.swift */; };
 		1C8C362E27153341006FC33B /* Restaurant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1C8C362C27153341006FC33B /* Restaurant.xcdatamodeld */; };
 		1CA26D04270DF63200B06963 /* MapViewControllerThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA26D03270DF63200B06963 /* MapViewControllerThree.swift */; };
 		1CAEE9BC2704164D00CBE2E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CAEE9BB2704164D00CBE2E1 /* AppDelegate.swift */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		1C4B94572713017B0089FA54 /* NewRestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRestaurantTableViewController.swift; sourceTree = "<group>"; };
+		1C7FB402271A495100E11F1C /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		1C7FB404271A692500E11F1C /* WalkThroughContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughContentViewController.swift; sourceTree = "<group>"; };
+		1C7FB406271AA4C000E11F1C /* WalkThroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughPageViewController.swift; sourceTree = "<group>"; };
+		1C7FB408271AB08600E11F1C /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		1C8C362D27153341006FC33B /* Restaurant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Restaurant.xcdatamodel; sourceTree = "<group>"; };
 		1CA26D03270DF63200B06963 /* MapViewControllerThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewControllerThree.swift; sourceTree = "<group>"; };
 		1CAEE9B82704164D00CBE2E1 /* Restaurant App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C7FB401271A48D000E11F1C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1CAEE9C62704165500CBE2E1 /* LaunchScreen.storyboard */,
+				1CAEE9C12704164D00CBE2E1 /* Main.storyboard */,
+				1C7FB402271A495100E11F1C /* Onboarding.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		1CAEE9AF2704164D00CBE2E1 = {
 			isa = PBXGroup;
 			children = (
@@ -86,11 +104,11 @@
 			children = (
 				1CAEE9BB2704164D00CBE2E1 /* AppDelegate.swift */,
 				1CAEE9BD2704164D00CBE2E1 /* SceneDelegate.swift */,
+				1C7FB401271A48D000E11F1C /* Storyboard */,
 				1CB68E122708C796008C9299 /* Model */,
 				1CB68E0E2708C732008C9299 /* Controller */,
 				1CB68E0F2708C755008C9299 /* View */,
 				1CAEE9C42704165500CBE2E1 /* Assets.xcassets */,
-				1CAEE9C62704165500CBE2E1 /* LaunchScreen.storyboard */,
 				1CAEE9C92704165500CBE2E1 /* Info.plist */,
 			);
 			path = "Restaurant App";
@@ -104,6 +122,9 @@
 				1CA26D03270DF63200B06963 /* MapViewControllerThree.swift */,
 				1CE9F3C4270F9D47009E08A1 /* AnnimationViewController.swift */,
 				1C4B94572713017B0089FA54 /* NewRestaurantTableViewController.swift */,
+				1C7FB404271A692500E11F1C /* WalkThroughContentViewController.swift */,
+				1C7FB406271AA4C000E11F1C /* WalkThroughPageViewController.swift */,
+				1C7FB408271AB08600E11F1C /* WalkThroughViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,7 +132,6 @@
 		1CB68E0F2708C755008C9299 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1CAEE9C12704164D00CBE2E1 /* Main.storyboard */,
 				1CAEE9D127043D3A00CBE2E1 /* RestaurantTableViewCell.swift */,
 				1CE92B33270BA9A9009CB8CA /* SeccondTableViewCellThree.swift */,
 				1CE92B35270BA9C1009CB8CA /* SecondTableViewCellFour.swift */,
@@ -200,6 +220,7 @@
 				1CAEE9C82704165500CBE2E1 /* LaunchScreen.storyboard in Resources */,
 				1CAEE9C52704165500CBE2E1 /* Assets.xcassets in Resources */,
 				1CAEE9C32704164D00CBE2E1 /* Main.storyboard in Resources */,
+				1C7FB403271A495100E11F1C /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,10 +235,12 @@
 				1CAEE9D227043D3A00CBE2E1 /* RestaurantTableViewCell.swift in Sources */,
 				1C8C362E27153341006FC33B /* Restaurant.xcdatamodeld in Sources */,
 				1CE92B34270BA9A9009CB8CA /* SeccondTableViewCellThree.swift in Sources */,
+				1C7FB407271AA4C000E11F1C /* WalkThroughPageViewController.swift in Sources */,
 				1C4B94582713017B0089FA54 /* NewRestaurantTableViewController.swift in Sources */,
 				1CAEE9C02704164D00CBE2E1 /* ViewController.swift in Sources */,
 				1CA26D04270DF63200B06963 /* MapViewControllerThree.swift in Sources */,
 				1CB68E112708C774008C9299 /* Restaurantt.swift in Sources */,
+				1C7FB409271AB08600E11F1C /* WalkThroughViewController.swift in Sources */,
 				1CAEE9BC2704164D00CBE2E1 /* AppDelegate.swift in Sources */,
 				1CB0DCBD2708565C0085D088 /* SeccondViewController.swift in Sources */,
 				1CE92B36270BA9C1009CB8CA /* SecondTableViewCellFour.swift in Sources */,
@@ -225,6 +248,7 @@
 				1CAEE9BE2704164D00CBE2E1 /* SceneDelegate.swift in Sources */,
 				1CE9F3C5270F9D47009E08A1 /* AnnimationViewController.swift in Sources */,
 				1CE54A03270A7041006CE478 /* SecondTableViewCellTwo.swift in Sources */,
+				1C7FB405271A692500E11F1C /* WalkThroughContentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

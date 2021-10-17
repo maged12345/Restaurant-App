@@ -11,17 +11,17 @@ import CoreData
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var mySearchBar: UISearchBar!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet var emptyRestaurant: UIView!
     
     var restaurantArray = [Restaurant]()
-    
-
-    
     @IBOutlet weak var tableView: UITableView!
     
+    
+    //MARK: - life cycle of ViewController methods
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundView = emptyRestaurant
@@ -40,6 +40,16 @@ class ViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
           loadData()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if UserDefaults.standard.bool(forKey: "WalkThoughStandard") {
+            return
+        }
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkThroughController = storyboard.instantiateViewController(withIdentifier: "WalkThroughViewController")as?WalkThroughViewController {
+            present(walkThroughController, animated: true, completion: nil)
+        }
     }
     
     //MARK: - prepare for Segue
@@ -80,6 +90,8 @@ class ViewController: UIViewController {
         }
            tableView.reloadData()
     }
+    
+    
 }
 
 
@@ -240,13 +252,18 @@ extension ViewController:UITableViewDelegate , UITableViewDataSource {
 
 //MARK: - Search Bar Method
 extension ViewController:UISearchBarDelegate {
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         let request:NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
          request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", searchBar.text!)
    
          request.sortDescriptors = [ NSSortDescriptor(key: "name", ascending: true) ]
        
          loadData(with: request)
+    
+       
+      
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -258,4 +275,5 @@ extension ViewController:UISearchBarDelegate {
           
         }
     }
+    
 }

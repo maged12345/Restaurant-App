@@ -104,6 +104,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emptyRestaurant" destination="pTl-1B-Hyo" id="tZK-ak-sc9"/>
+                        <outlet property="mySearchBar" destination="8PW-hT-lt1" id="P6G-cv-6cn"/>
                         <outlet property="tableView" destination="AuQ-7I-6HB" id="7Es-hL-LMs"/>
                         <segue destination="Geu-OH-VX1" kind="show" identifier="toSecondVC" id="u82-94-b12"/>
                     </connections>
@@ -211,7 +212,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REW-rj-4fW">
                                             <rect key="frame" x="14" y="27" width="386" height="48"/>
-                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="gvE-9c-RFg"/>
                                             </constraints>
@@ -756,7 +757,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
