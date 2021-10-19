@@ -19,10 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Configure Back Button item of navigation Bar
-              UINavigationBar.appearance().backIndicatorImage = UIImage(named: "back")
-              UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "back")
-    
-              
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "back")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "back")
+        
+        
+        
+        // customise tap Bar
+        
+       UITabBar.appearance().tintColor = UIColor(red: 255, green: 0, blue: 250, alpha: 1)
+        
+        UITabBar.appearance().barTintColor = UIColor(red: 250, green: 250, blue: 250 , alpha: 1)
         
         return true
     }

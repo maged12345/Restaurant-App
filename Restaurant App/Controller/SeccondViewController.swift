@@ -28,11 +28,13 @@ class SeccondViewController: UIViewController {
         tableView.dataSource = self
         
     // Customization of the navaigation bar
-        
+       
+        //navigationItem.largeTitleDisplayMode = .never
+        //navigationItem.backBarButtonItem?.title = "back"
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.navigationBar.tintColor = .white
-         title = ""
+     
        
         tableView.contentInsetAdjustmentBehavior = .never
        print("Hi from Second  ViewDidload method ..............????")
