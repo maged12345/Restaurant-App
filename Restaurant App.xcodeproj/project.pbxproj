@@ -86,6 +86,8 @@
 				1CAEE9C62704165500CBE2E1 /* LaunchScreen.storyboard */,
 				1CAEE9C12704164D00CBE2E1 /* Main.storyboard */,
 				1C7FB402271A495100E11F1C /* Onboarding.storyboard */,
+				1C4B9607271C90210006D42B /* About.storyboard */,
+				1C4B960A271C906E0006D42B /* Discover.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -93,8 +95,6 @@
 		1CAEE9AF2704164D00CBE2E1 = {
 			isa = PBXGroup;
 			children = (
-				1C4B960A271C906E0006D42B /* Discover.storyboard */,
-				1C4B9607271C90210006D42B /* About.storyboard */,
 				1CAEE9BA2704164D00CBE2E1 /* Restaurant App */,
 				1CAEE9B92704164D00CBE2E1 /* Products */,
 				1CE92B30270B9609009CB8CA /* Frameworks */,
